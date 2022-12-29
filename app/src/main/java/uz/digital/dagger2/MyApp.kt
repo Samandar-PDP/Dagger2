@@ -3,6 +3,7 @@ package uz.digital.dagger2
 import android.app.Application
 import uz.digital.dagger2.di.AppComponent
 import uz.digital.dagger2.di.DaggerAppComponent
+import uz.digital.dagger2.di.DatabaseModule
 
 class MyApp : Application() {
     companion object {
@@ -12,6 +13,7 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         component = DaggerAppComponent.builder()
+            .databaseModule(DatabaseModule(this))
             .build()
     }
 }

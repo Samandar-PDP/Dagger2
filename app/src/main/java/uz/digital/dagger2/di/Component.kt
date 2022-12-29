@@ -4,7 +4,7 @@ import uz.digital.dagger2.MainActivity
 import javax.inject.Singleton
 
 @Singleton
-@dagger.Component(modules = [NetworkModule::class])
+@dagger.Component(modules = [NetworkModule::class, DatabaseModule::class])
 interface AppComponent {
     fun inject(activity: MainActivity)
 }
